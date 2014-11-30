@@ -1,0 +1,25 @@
+﻿<img ng-if="file.RelativeUrl && (file.FileTypeID == 1 || file.FileTypeID == 5)" 
+		 ng-src="{{prefix + file.RelativeUrl}}" 
+		 ng-class="clazz" 
+		 ng-style="style" />
+<img ng-if="file.Url && (file.FileTypeID == 1 || file.FileTypeID == 5)"
+		 ng-src="{{ file.Url }}"
+		 ng-class="clazz"
+		 ng-style="style" />
+<video ng-if="file.RelativeUrl && file.FileTypeID == 6"
+			 ng-src="{{prefix + file.RelativeUrl}}"
+			 ng-class="clazz"
+			 ng-style="style"></video>
+<video ng-if="file.Url && file.FileTypeID == 6"
+			 ng-src="{{ file.Url }}"
+			 ng-class="clazz"
+			 ng-style="style" ></video>
+<audio ng-if="file.RelativeUrl && file.FileTypeID == 5"
+			 ng-src="{{prefix + file.RelativeUrl}}"
+			 ng-class="clazz"
+			 ng-style="style"></audio>
+<audio ng-if="file.Url && file.FileTypeID == 5"
+			 ng-src="{{ file.Url }}"
+			 ng-class="clazz"
+			 ng-style="style"></audio>
+<div ng-if="embedCode" ng-class="clazz" ng-style="style" ng-bind-html="embedCode"></div>

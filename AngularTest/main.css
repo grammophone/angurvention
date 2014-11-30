@@ -1,0 +1,14 @@
+﻿.ergma-base { font-family: Verdana; }
+.ergma-showcases-container { background-color: #C0C0C0; float:left; width: 100%; }
+.ergma-userbar { background-color: black; color: #D0D0D0; font-size: 22pt; text-align:right; margin-bottom: 4px;}
+.ergma-avatar { padding: 2px; background-color: red; vertical-align:top;  }
+.ergma-showcase-item-title {}
+.ergma-showcase-item-thumbnail {}
+.ergma-showcase-list { float: left; margin-right: 6px; overflow-y: scroll; overflow-wrap: break-word; width: 230px; height: 600px; }
+.ergma-showcase-list-item { padding: 6px; cursor:pointer; }
+.ergma-showcase-item-thumbnail-image { width: 200px; }
+.ergma-showcase { padding: 6px; width: 940px; float:left; }
+.ergma-container { width:1200px; margin-left: auto; margin-right:auto; }
+.ergma-showcases-container {  }
+.selected { background-color: salmon; }
+label {display: inline-block; width: 7em; }

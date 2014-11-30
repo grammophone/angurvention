@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="showcases">
+<head>
+	<title>Test</title>
+	<script type="text/javascript" src="Scripts/angular.js"></script>
+	<script type="text/javascript" src="ergma.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+<body class="ergma-base">
+	<div class="ergma-container">
+		<div ng-controller="SelfController as selfController" class="ergma-userbar">
+			<span ng-bind="self.LastName"></span> <span ng-bind="self.FirstName"></span>
+			<ergma-file ng-if="self.Avatar" file="self.Avatar" file-class="ergma-avatar" />
+		</div>
+
+		<div ng-controller="ShowcasesController as showcasesController" class="ergma-showcases-container">
+			<div class="ergma-showcase-list">
+				<div class="ergma-showcase-list-item" ng-repeat="listItem in listItems"
+						 ng-class="{selected: listItem.isSelected}">
+					<ergma-showcase-thumbnail showcase="listItem.showcase"
+																		thumbnail-class="ergma-showcase-item-thumbnail-image"
+																		ng-click="setSelectedListItem(listItem)" />
+				</div>
+			</div>
+			<div class="ergma-showcase">
+				<ergma-file ng-if="selectedListItem.showcase.Items.length" 
+										file="selectedListItem.showcase.Items[0].File" ></ergma-file>
+				<form name="showcaseForm"
+							ng-show="selectedListItem"
+							ng-submit="saveShowcase(selectedListItem)">
+					<p>
+						<label for="title">Title</label>
+						<input type="text" name="title" ergma-multilingual-model="selectedListItem.showcase.Title"
+									 size="70" />
+					</p>
+					<p>
+						<label>Description</label>
+						<input type="text" name="description" ergma-multilingual-model="selectedListItem.showcase.Description" 
+									 size="70" />
+					</p>
+					<p>
+						<input type="submit" value="Save showcase" />
+					</p>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
