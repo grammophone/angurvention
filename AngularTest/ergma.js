@@ -205,6 +205,8 @@
 			templateUrl: "ShowcaseItemThumbnail.html",
 			scope: {
 				item: "=item",
+				thumbnailClass: "@",
+				thumbnailStyle: "@"
 			}
 		}
 	});
