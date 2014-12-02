@@ -103,11 +103,15 @@
 
 	// Showcase functions
 	function getDefaultItemOfShowcase(showcase) {
-		var defaultItem = showcase.DefaultItem;
+		var item = null;
 
-		if (!defaultItem && showcase.Items.length > 0) defaultItem = showcase.Items[0];
+		for (i = 0; i < showcase.Items.length; i++) {
+			item = showcase.Items[i];
+			if (item.IsDefault) return defaultItem;
+		}
 
-		return defaultItem;
+		// If no default item was found, return any.
+		return item;
 	}
 
 	// Directives definitions.
@@ -200,7 +204,7 @@
 			restrict: "E",
 			templateUrl: "ShowcaseItemThumbnail.html",
 			scope: {
-				item: "=item"
+				item: "=item",
 			}
 		}
 	});
