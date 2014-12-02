@@ -74,7 +74,10 @@
 		}
 
 		var literals = multilingual.Literals;
-		if (!literals) multilingual.Literals = [];
+		if (!literals) {
+			literals = [];
+			multilingual.Literals = literals;
+		}
 
 		var foundExistingLiteral = false;
 
